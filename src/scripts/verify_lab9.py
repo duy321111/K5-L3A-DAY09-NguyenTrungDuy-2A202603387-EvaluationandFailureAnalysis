@@ -31,6 +31,8 @@ def main():
         passed = result.returncode == expected
         entries.append(dict(name=name, command=[sys.executable,*argv], expected=expected,
                             exit_code=result.returncode, passed=passed))
+        # Persist each outcome so an interrupted terminal does not discard the audit trail.
+        (logdir/'progress.json').write_text(json.dumps(dict(complete=False, checks=entries), indent=2), encoding='utf-8')
         print(f"{name}: exit {result.returncode}, expected {expected} - {'PASS' if passed else 'FAIL'}", flush=True)
         if not passed:
             print(output[-5000:], flush=True)
@@ -68,6 +70,7 @@ def main():
         run(f"m7_gate_{name}", cmd, 1)
     summary = dict(passed=all(e['passed'] for e in entries), checks=entries)
     (logdir/'summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
+    (logdir/'progress.json').write_text(json.dumps(dict(complete=True, **summary), indent=2), encoding='utf-8')
     print(f"Verification: {sum(e['passed'] for e in entries)}/{len(entries)} expected outcomes",flush=True)
     return 0 if summary['passed'] else 1
 

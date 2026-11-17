@@ -1,6 +1,6 @@
 # Eval card — LogiX-VN
 
-Implementation commit trước khi render tài liệu: `0cbbc5ccded6dc99fe0672600344204549128f69`. Report sinh bằng script, không sửa tay.
+Implementation commit trước khi render tài liệu: `1748fd96a248aa87961ca465e93838f4d9b31865`. Report sinh bằng script, không sửa tay.
 
 v1 run `E-swarm-20261117-1bc3`, eval set SHA `1bc3f26d5c27`, 14 item × 5 seed.
 v2 run `E-swarm-20261117-a74c`, eval set SHA `a74cc128b448`, 28 item × 5 seed.
@@ -104,4 +104,4 @@ Tăng eval_set_version khi đổi item/nhãn/slice; sinh lại baseline và tăn
 cd src
 .\.venv\Scripts\python.exe scripts/verify_lab9.py
 ```
-Kết quả script hiện tại: 26/26 expected outcomes. Xem reports/verification/summary.json và các log tương ứng. GitHub Actions được kiểm riêng qua PR; kết quả local không thay thế CI.
+Kết quả script hiện tại: 22/22 expected outcomes. Xem reports/verification/summary.json và các log tương ứng. GitHub Actions được kiểm riêng qua PR; kết quả local không thay thế CI.
