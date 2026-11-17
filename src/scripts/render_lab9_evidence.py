@@ -79,6 +79,7 @@ def render():
         "Tăng eval_set_version khi đổi item/nhãn/slice; sinh lại baseline và tăng metric_spec_version khi thay hợp đồng metric. Cùng eval-set version chỉ siết ngưỡng.",
         "", "## Tái hiện", "```powershell", "cd src", ".\\.venv\\Scripts\\python.exe scripts/verify_lab9.py", "```",
         f"Kết quả script hiện tại: {sum(c['passed'] for c in summary['checks'])}/{len(summary['checks'])} expected outcomes. Xem reports/verification/summary.json và các log tương ứng. GitHub Actions được kiểm riêng qua PR; kết quả local không thay thế CI."]
+    card.insert(4, 'Official Day 8 source: `VinUni-AI20k/K5-Day8-From-Workflows-to-Agents` @ `034c6c421c198dae67a9211d15e2587d5a378972`; `src/lab8/` is unchanged from that source.')
     (docs/'eval_card.md').write_text('\n'.join(line.rstrip() for line in '\n'.join(card).splitlines())+'\n',encoding='utf8')
     prd=["# PRD v1.1 — Định nghĩa chạy đúng và gate release", "", "Giữ chức năng Lab 8; bổ sung đánh giá, không sửa agent Lab 8. Đây là pilot mô phỏng offline cho claim hoàn phí/bồi thường một đơn thuộc principal được phép; không triển khai chuyển tiền thật hoặc xử lý tranh chấp nhiều đơn.", "",
         "## Tiêu chí thành công", "", "| Metric | Ngưỡng v1 | Blocking | Baseline |", "|---|---|---|---|"]

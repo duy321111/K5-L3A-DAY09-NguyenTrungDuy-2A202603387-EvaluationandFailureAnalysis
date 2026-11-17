@@ -1,7 +1,8 @@
 # Eval card — LogiX-VN
 
-Implementation commit trước khi render tài liệu: `1748fd96a248aa87961ca465e93838f4d9b31865`. Report sinh bằng script, không sửa tay.
+Implementation commit trước khi render tài liệu: `dc3ee546b32a9753b8e3794d1c2766418485b4cf`. Report sinh bằng script, không sửa tay.
 
+Official Day 8 source: `VinUni-AI20k/K5-Day8-From-Workflows-to-Agents` @ `034c6c421c198dae67a9211d15e2587d5a378972`; `src/lab8/` is unchanged from that source.
 v1 run `E-swarm-20261117-1bc3`, eval set SHA `1bc3f26d5c27`, 14 item × 5 seed.
 v2 run `E-swarm-20261117-a74c`, eval set SHA `a74cc128b448`, 28 item × 5 seed.
 Nguồn: lab8_public + pack adversarial công khai; nhãn tách riêng. Seeds: 11,22,33,44,55; percentile paired bootstrap 1000 resamples, rng=2027, CI=95%. Đơn vị resample là item đã lấy trung bình seed, không coi các seed là item độc lập.
